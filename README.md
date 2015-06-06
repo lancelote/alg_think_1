@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lancelote/cs212.svg)](https://travis-ci.org/lancelote/cs212)
+[![Build Status](https://travis-ci.org/lancelote/alg_think_1.svg)](https://travis-ci.org/lancelote/alg_think_1)
 
 # Algorithmic Thinking (Part 1)
 
