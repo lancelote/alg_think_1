@@ -4,31 +4,28 @@ Algorithmic Thinking Project 1
 
 from collections import Counter
 
-# Test data
-# Adjacency lists
-EX_GRAPH0 = {0: {1, 2},
-             1: {},
-             2: {}}
-EX_GRAPH1 = {0: {1, 4, 5},
-             1: {2, 6},
-             2: {3},
-             3: {0},
-             4: {1},
-             5: {2},
-             6: {}}
-EX_GRAPH2 = {0: {1, 4, 5},
-             1: {2, 6},
-             2: {3, 7},
-             3: {7},
-             4: {1},
-             5: {2},
-             6: {},
-             7: {3},
-             8: {1, 2},
-             9: {0, 3, 4, 5, 6, 7}}
+EX_GRAPH0 = {0: set([1, 2]),
+             1: set([]),
+             2: set([])}
+EX_GRAPH1 = {0: set([1, 4, 5]),
+             1: set([2, 6]),
+             2: set([3]),
+             3: set([0]),
+             4: set([1]),
+             5: set([2]),
+             6: set([])}
+EX_GRAPH2 = {0: set([1, 4, 5]),
+             1: set([2, 6]),
+             2: set([3, 7]),
+             3: set([7]),
+             4: set([1]),
+             5: set([2]),
+             6: set([]),
+             7: set([3]),
+             8: set([1, 2]),
+             9: set([0, 3, 4, 5, 6, 7])}
 
 
-# Project implementation
 def make_complete_graph(num_nodes):
     """
     Makes a dictionary representation of complete directed graph with given
@@ -48,7 +45,9 @@ def compute_in_degrees(digraph):
     :param digraph: a dictionary corresponding to a directed graph
     :return: a dictionary {node: in-degree}
     """
-    return {k: len(v) for (k, v) in digraph.items()}
+    nodes = set(digraph.keys())
+    return {k: sum(k in digraph[node] for node in nodes - {k})
+            for k in digraph.keys()}
 
 
 def in_degree_distribution(digraph):
@@ -60,4 +59,4 @@ def in_degree_distribution(digraph):
     graph {in-degree: occurence}
     """
     in_degrees = compute_in_degrees(digraph)
-    return Counter(in_degrees.values())
+    return dict(Counter(in_degrees.values()))
