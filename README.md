@@ -3,3 +3,18 @@
 # Algorithmic Thinking (Part 1)
 
 [Algorithmic Thinking (Part 1) coursera course](https://www.coursera.org/course/algorithmicthink1) code
+
+## Testing
+
+```bash
+# all
+paver
+
+# specific
+paver project1
+```
+
+Do not forget:
+```bash
+pip install -r requirements.txt
+```
