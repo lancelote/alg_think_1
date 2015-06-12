@@ -46,9 +46,13 @@ def compute_in_degrees(digraph):
     :param digraph: a dictionary corresponding to a directed graph
     :return: a dictionary {node: in-degree}
     """
-    nodes = set(digraph.keys())
-    return {k: sum(k in digraph[node] for node in nodes - {k})
-            for k in digraph.keys()}
+    in_degrees = dict()
+    for node in digraph.keys():
+        in_degrees[node] = 0
+    for nodes in digraph.values():
+        for node in nodes:
+            in_degrees[node] += 1
+    return in_degrees
 
 
 def in_degree_distribution(digraph):
