@@ -4,6 +4,7 @@ Algorithmic Thinking Project 1
 
 from collections import Counter
 
+# Do not change set([]) notation, coursera test will fail
 EX_GRAPH0 = {0: set([1, 2]),
              1: set([]),
              2: set([])}
