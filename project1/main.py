@@ -28,23 +28,26 @@ EX_GRAPH2 = {0: set([1, 4, 5]),
 
 
 def make_complete_graph(num_nodes):
-    """
-    Makes a dictionary representation of complete directed graph with given
-    number of nodes
+    """Makes a dictionary representation of complete directed graph
 
-    :param num_nodes: number of nodes in the graph
-    :return: a dictionary corresponding to a complete directed graph
+    Args:
+        num_nodes (int): Number of nodes in the graph
+
+    Returns:
+        dict: Complete directed graph
     """
     nodes = set(range(num_nodes))
     return {n: nodes - {n} for n in range(num_nodes)}
 
 
 def compute_in_degrees(digraph):
-    """
-    Compute in-degree of every node of a given graph
+    """Compute in-degree of every node of a given graph
 
-    :param digraph: a dictionary corresponding to a directed graph
-    :return: a dictionary {node: in-degree}
+    Args:
+        digraph (dict): Directed graph
+
+    Returns:
+        dict: {node: in-degree}
     """
     in_degrees = dict()
     for node in digraph.keys():
@@ -56,12 +59,13 @@ def compute_in_degrees(digraph):
 
 
 def in_degree_distribution(digraph):
-    """
-    Compute in-degree distribution of a given graph
+    """Compute in-degree distribution of a given graph
 
-    :param digraph: a dictionary corresponding to a directed graph
-    :return: a dictionary corresponding to a in-degree distribution of a given
-    graph {in-degree: occurence}
+    Args:
+        digraph (dict): Directed graph
+
+    Returns:
+        dict: in-degree distribution of a given
     """
     in_degrees = compute_in_degrees(digraph)
     return dict(Counter(in_degrees.values()))

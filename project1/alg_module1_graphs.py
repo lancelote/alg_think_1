@@ -1,5 +1,7 @@
 """
 Graphs for Module 1
+
+Used for testing
 """
 
 GRAPH0 = {0: {1},
