@@ -1,0 +1,5 @@
+coverage
+paver
+pylint
+pytest
+pytest-cov
