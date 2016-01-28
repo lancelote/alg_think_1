@@ -7,6 +7,8 @@
 
 Version: Winter 2016
 
+## Course Structure
+
 - [ ] Module 1 - Graphs and brute-force algorithms
 - [ ] ...
 
